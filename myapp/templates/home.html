@@ -1,0 +1,15 @@
+{% extends "myapp/base.html" %}
+
+{% load django_bootstrap5 %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1 class="text-primary">Welcome to Bootstrap 5 with Django!</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}
