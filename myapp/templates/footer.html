@@ -1,0 +1,27 @@
+{% load static %}
+<footer class="custom-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 footer-logo">
+                <img src="{% static 'images/leadlogo.jpeg' %}" alt="Lead ORGANIZATION">
+            </div>
+            <div class="col-md-4 footer-links">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About Us</a></li>
+                    <li><a href="{% url 'courses' %}">Courses</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 footer-contact">
+                <h5>Contact Us</h5>
+                <p>Email: info@leadfoundation.org</p>
+                <p>Phone: +123 456 7890</p>
+                <p>Address: 123 Innovation Street, Tech City</p>
+            </div>
+        </div>
+        <hr>
+        <p class="text-center">© 2025 Lead ORGANIZATION. All rights reserved.</p>
+    </div>
+</footer>

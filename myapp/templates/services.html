@@ -1,0 +1,211 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home - LEAD{% endblock %}
+
+{% block content %}
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PROJECTS</title>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'css/services.css' %}">
+        <link rel="icon" href="{% static 'images/logo.png' %}" type="image/png">
+    </head>
+    <body>
+
+        <!-- Header and Navigation -->
+        {% include 'header.html' %}
+        
+        <!-- Transforming Digital Education & Innovation Section -->
+        <section id="transforming-education" class="offer-section py-5">
+            <div class="container text-center">
+                <h1>PROJECTS</h1>
+                <p class="lead">
+                    Empowering to harness the power of technology for growth and success.
+                </p>
+            </div>
+        </section>
+
+        <!-- Educational Solutions Section -->
+        <section id="educational-solutions" class="educational-solutions py-5" style="background-image: url('{% static 'images/t.png' %}');">
+            <div class="container">
+                <h2 class="text-center mb-4 section-title">1.0 CAPACITY BUILDING</h2>
+                <p class="text-center section-subtitle">
+                    LEAD expedites acquisition of innovative knowledge and skills by rural communities for effective involvement in live hood Projects. 
+                    This is done through periodical training of farmers Groups.
+We boast of a team of dedicated experienced Agriculture, Livestock and Community Development specialist with 
+requisite knowledge and skills to offer capacity building to help farmers, entrepreurs, stakeholders and actors improve their operations, increase their productivity and maximize Profitability.
+                </p>
+                <div class="row justify-content-center">
+                    <!-- Card 1 -->
+                    <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                        <div class="offer-card">
+                            <img src="{% static 'images/t.png' %}" class="offer-img" alt="Interactive Courses">
+                            <h4 class="offer-title">Interactive Courses</h4>
+                            <p class="offer-text">
+                                Explore <b>Cloud Computing, Cybersecurity, AI, Networking, and Software Engineering</b>.
+                            </p>
+                            {% comment %} <a href="{% url 'courses' %}" class="offer-link">Enroll Now →</a> {% endcomment %}
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                        <div class="offer-card">
+                            <img src="{% static 'images/t.png' %}" class="offer-img" alt="Hands-On Labs">
+                            <h4 class="offer-title">Hands-On Labs</h4>
+                            <p class="offer-text">
+                                Gain real-world experience through simulated lab environments that mimic real job scenarios.
+                            </p>
+                            {% comment %} <a href="{% url 'courses' %}" class="offer-link">Try Our Labs →</a> {% endcomment %}
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                        <div class="offer-card">
+                            <img src="{% static 'images/t.png' %}" class="offer-img" alt="AI-Powered Learning">
+                            <h4 class="offer-title">AI-Powered Learning</h4>
+                            <p class="offer-text">
+                                AI-driven dashboards personalize learning, assessments, and progress tracking.
+                            </p>
+                            <a href="{% url 'courses' %}" class="offer-link">Discover AI Learning →</a>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                        <div class="offer-card">
+                            <img src="{% static 'images/t.png' %}" class="offer-img" alt="Expert Mentorship">
+                            <h4 class="offer-title">Expert-Led Mentorship</h4>
+                            <p class="offer-text">
+                                Learn from industry professionals through live sessions and mentorship programs.
+                            </p>
+                            <a href="{% url 'courses' %}" class="offer-link">Join Mentorship →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Custom Software Development Section -->
+<!-- Custom Software Development Section -->
+<section id="custom-software" class="custom-software py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">2.0 LIVELIHOOD PROJECTS/TIMPS </h2>
+        <p class="text-center">
+            These are Income Generation activities that members can invest to Improve their standard of living. 
+            LEAD encourages its member's to invest in such projects through adoption of innovative technologies. 
+            Leads targets Vulnerable and Marginalized Groups through supporting with Inputs and materials to increase productivity through adoption of Technologies, Innovations and Management Practices (TIMPs). 
+            LEAD has prioritized and promotes the following livelihood Projects
+        </p>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'images/dev.png' %}" class="card-img-top" alt="End-to-End Development">
+                    <div class="card-body">
+                        <h4 class="card-title">DAIRY PRODUCTIONS (10 LITRE MILK PROJECT)</h4>
+                        <p class="card-text">
+                            From idea to execution, our team handles everything—**UI/UX design, backend development, deployment, and maintenance**.
+                            Whether you need a web app, mobile app, or enterprise software, we create tailored solutions.
+                        </p>
+                        {% comment %} <a href="{% url 'courses' %}" class="custom-btn">See Our Work</a> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'images/dev.png' %}" class="card-img-top" alt="Business Solutions">
+                    <div class="card-body">
+                        <h4 class="card-title">INDIGENOUS CHICKEN PRODUCTION</h4>
+                        <p class="card-text">
+                            Focusing on source of improved day old chicks, brooding, Feeds and Feeding, Feed formulations, Hatching, Pests and Disease 
+                            Management, Housing.
+                            Target Group Is Vulnerable and Marginalized Groups including Youth who are resource poor.
+                        </p>
+                        {% comment %} <a href="{% url 'courses' %}" class="custom-btn">Explore Business Solutions</a> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'images/dev.png' %}" class="card-img-top" alt="Agile Collaboration">
+                    <div class="card-body">
+                        <h4 class="card-title">INDIGENOUS CHICKEN PRODUCTION</h4>
+                        <p class="card-text">
+                            The objective is to promote high value Crops that Include Avocados, passion     
+        fruits, Carrots, Beetroots etc.
+                        </p>
+                        {% comment %} <a href="{% url 'courses' %}" class="custom-btn">Learn About Agile</a> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tech & AI Consulting Section -->
+<section id="ai-consulting" class="ai-consulting py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">D.AFRICAN LEAFY VEGETABLES(ALV) </h2>
+        <p class="text-center">
+            Due to the demand of Organically grown leafy vegetables our focus is to train the Groups on Technologies, 
+            innovation and Management Practices that increase productivity of African Leafy Vegetables. Crops Prioritized include Amaranths, Spider plant, 
+            Pumpkins, Black night shade etc.</p>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <img src="{% static 'images/consultation.png' %}" class="card-img-top" alt="AI Strategy & Implementation">
+                    <div class="card-body">
+                        <h4 class="card-title">DAIRY GOATS PRODUCTION.</h4>
+                        <p class="card-text">
+                             
+                            Dairy Production is ideal for small holder farmers. Focus has been on modern housing structures, breeds and breeding, 
+                            Feeds and Feeding, pests and Disease control.</p>
+                        <a href="{% url 'courses' %}" class="custom-btn">AI Strategy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <img src="{% static 'images/consultation.png' %}" class="card-img-top" alt="Data Science & Business Intelligence">
+                    <div class="card-body">
+                        <h4 class="card-title">3.0 FOOD SECURITY INITIATIVES –ZERO HUNGER</h4>
+                        <p class="card-text">
+                            We analyze complex datasets to uncover actionable insights, **optimize decision-making, and enhance business growth**.
+                        </p>
+                        <a href="{% url 'courses' %}" class="custom-btn">Explore Data Science</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Call to Action Section -->
+<section id="cta-section" class="cta-section py-5 text-white text-center" style="background-color: #436976;">
+    <div class="container">
+        <h2>Empower Your Future with LEAD NGO Solutions</h2>
+        <p>
+            Take the first step toward achieving your goals with our digital education and custom software solutions.
+        </p>
+        <a href="{% url 'courses' %}" class="custom-cta-btn mx-3">Enroll Now</a>
+        <a href="{% url 'contact' %}" class="custom-cta-btn mx-3">Contact Us</a>
+    </div>
+</section>
+
+
+
+        <!-- Bootstrap JS and Popper.js -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+        <script src="{% static 'js/static' %}"></script>
+    </body>
+</html>
+{% endblock %}

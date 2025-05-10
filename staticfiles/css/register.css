@@ -1,0 +1,207 @@
+/* General Styles */
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+/* Centered Login Section */
+.register-container {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+/* Centered Header */
+.register-header {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    margin-top: 150px;
+}
+
+/* Subheading below the title */
+.register-header p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Scrollable Content */
+.register-content {
+
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Login Form */
+.register-form {
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Input Fields */
+.register-form input[type="text"],
+.register-form input[type="email"],
+.register-form input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Remember Me Section */
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+    font-size: 13px;
+    color: #555;
+}
+
+/* Buttons */
+.btn-primary,
+.btn-secondary,
+.btn-forgot {
+    width: 100%;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Button Colors */
+.btn-primary {
+    background-color: #6795c6;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-forgot {
+    background-color: gray;
+    color: white;
+}
+
+/* Social Login */
+.social-login {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.social-login p {
+    font-size: 13px;
+    color: #555;
+}
+
+.social-login .btn {
+    margin-top: 5px;
+    width: 90%;
+    max-width: 200px;
+}
+
+.google-btn {
+    background-color: #ffab10;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 1200px) {
+    .register-container {
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 992px) {
+    .register-container {
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 768px) {
+    .register-container {
+        max-width: 90%;
+        padding: 30px;
+    }
+    
+    .register-content {
+        max-height: 350px;
+    }
+    
+    .register-form {
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .register-header {
+        font-size: 18px;
+    }
+
+    .register-header p {
+        font-size: 14px;
+    }
+
+    .register-container {
+        padding: 20px;
+        max-width: 100%;
+    }
+    
+    .register-content {
+        max-height: 300px;
+    }
+    
+    .register-form {
+        max-width: 300px;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-forgot {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+}
+
+@media (max-width: 300px) {
+    .register-header {
+        font-size: 16px;
+    }
+
+    .register-header p {
+        font-size: 13px;
+    }
+
+    .register-container {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .register-form {
+        max-width: 250px;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-forgot {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+}

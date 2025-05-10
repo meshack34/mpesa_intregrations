@@ -1,0 +1,478 @@
+:root {
+    --primary-color: #32758c;
+    --secondary-color: #dbf2fa;
+    --light-blue-1: #dcf3fb;
+    --light-blue-2: #ddf3fb;
+    --light-blue-3: #e3f7ff;
+    --light-blue-4: #e1f6ff;
+    --highlight-color: #ff9f00;
+    --white: #ffffff;
+}
+
+/* Global Styles */
+body {
+    background-color: var(--light-blue-3);
+    color: var(--primary-color);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header & Navigation */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color); /* Ensure background is set */
+    z-index: 1000; /* Ensures it stays on top of other elements */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+/* Navbar Styling */
+.navbar {
+    font-weight: bold;
+    background-color: var(--primary-color);
+    padding: 0.8rem 1rem;
+}
+
+/* Branding: Aligns logo & name to the leftmost margin */
+.navbar-brand {
+    margin-left: 0;  /* Ensures full left alignment */
+    display: flex;
+    align-items: center;
+}
+
+/* Logo Styling */
+.navbar-brand img.logo {
+    max-width: 50px;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* Brand Name */
+.navbar-brand .brand-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+    font-weight: bold;
+    color: var(--primary-color);
+    padding: 10px 18px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Adds space between navbar items */
+.navbar-nav .nav-item {
+    margin-right: 15px;
+}
+
+/* Hover Effects */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--highlight-color);
+    transform: scale(1.05);
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+}
+
+.dropdown-item {
+    font-size: 1rem;
+    color: white;
+    padding: 10px;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Dropdown Hover Effect */
+.navbar-nav .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* Removes default dropdown delay */
+}
+
+/* Optional: Add Smooth Fade Effect */
+.dropdown-menu {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 5px 0;
+    }
+
+    .navbar-collapse {
+        background: var(--primary-color);
+        padding: 10px;
+        border-radius: 10px;
+    }
+}
+
+/* Navbar Toggle Button */
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    outline: none;
+    box-shadow: none;
+}
+/* Ensure Nav Links Are Visible in Collapsed Mode on Small Screens */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: white !important; /* Set background for the toggled menu */
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .navbar-nav .nav-link {
+        color: #32758c; !important; /* Ensure text is visible */
+        display: block;
+        padding: 10px;
+        font-size: 1.1rem;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+        color: var(--highlight-color); /* Highlight color when hovered or active */
+    }
+
+    /* Ensure Dropdown Items are Visible */
+    .dropdown-menu {
+        background-color: white !important;
+        border-radius: 5px;
+    }
+
+    .dropdown-item {
+        color: black !important;
+    }
+
+    .dropdown-item:hover {
+        background-color: var(--highlight-color);
+        color: white !important;
+    }
+}
+
+.intro {
+    background: linear-gradient(135deg, var(--primary-color), var(--highlight-color));
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+    margin-top: 80px; /* Adjust based on your header height */
+}
+
+
+.intro p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+.story {
+    background: var(--light-blue-3);
+    padding: 80px 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.story .content {
+    max-width: 1200px; /* Increased width for better visibility */
+    width: 100%;
+    padding: 50px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: center;
+}
+
+/* Gradient Top Border */
+.story .content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-color), var(--highlight-color));
+    transform: translateX(-50%);
+}
+
+/* Title Styling */
+.story h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+/* Subtitle styling */
+.story p {
+    font-size: 1.3rem;
+    color: #444;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+/* Decorative line below the heading */
+.story h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--highlight-color);
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .story {
+        padding: 60px 3%;
+    }
+
+    .story .content {
+        padding: 40px;
+    }
+
+    .story h2 {
+        font-size: 2.2rem;
+    }
+
+    .story p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .story {
+        padding: 50px 2%;
+    }
+
+    .story .content {
+        padding: 30px;
+    }
+
+    .story h2 {
+        font-size: 2rem;
+    }
+
+    .story p {
+        font-size: 1.1rem;
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .story {
+        padding: 40px 5%;
+    }
+
+    .story .content {
+        padding: 25px;
+    }
+
+    .story h2 {
+        font-size: 1.8rem;
+    }
+
+    .story p {
+        font-size: 1rem;
+    }
+}
+
+.milestones-container {
+    width: 100%;
+    max-width: 1200px; /* Ensures proper spacing on large screens */
+    margin: 0 auto;
+    padding: 60px 5%;
+    text-align: center;
+}
+
+.milestones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Individual Milestone Box */
+.milestone {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    min-height: 220px;
+}
+
+/* Hover Effect */
+.milestone:hover {
+    transform: translateY(-5px);
+}
+
+/* Milestone Titles */
+.milestone h3 {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* Milestone Text */
+.milestone p {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .milestones {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .milestone {
+        padding: 25px;
+    }
+
+    .milestone h3 {
+        font-size: 1.5rem;
+    }
+
+    .milestone p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .milestones {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .milestone {
+        padding: 20px;
+    }
+
+    .milestone h3 {
+        font-size: 1.4rem;
+    }
+
+    .milestone p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .milestones {
+        grid-template-columns: 1fr;
+    }
+
+    .milestone {
+        padding: 18px;
+    }
+
+    .milestone h3 {
+        font-size: 1.3rem;
+    }
+
+    .milestone p {
+        font-size: 0.95rem;
+    }
+}
+
+
+.future-goals {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.2rem;
+    line-height: 1.8; /* Improves readability */
+    font-weight: 500;
+    max-width: 800px; /* Centers the section and keeps it well-structured */
+    margin: auto;
+    background: linear-gradient(135deg, var(--white), var(--light-gray));
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Individual Goal Items */
+.future-goals li {
+    padding-left: 35px;
+    position: relative;
+    color: var(--text-color);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* ✓ Icon Styling */
+.future-goals li:before {
+    content: "✔";
+    position: absolute;
+    left: 5px;
+    font-size: 1.2rem;
+    color: var(--highlight-color);
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect for Goals */
+.future-goals li:hover {
+    color: var(--primary-color);
+    transform: translateX(5px); /* Smooth interactive effect */
+}
+
+/* Hover Effect on Icon */
+.future-goals li:hover:before {
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .future-goals {
+        font-size: 1rem;
+        padding: 15px;
+    }
+    
+    .future-goals li:before {
+        font-size: 1rem;
+    }
+}
+
+
+/* ============================= */
+/* Footer */
+/* ============================= */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}

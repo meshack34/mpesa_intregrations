@@ -1,0 +1,50 @@
+<form id="paymentForm">
+    <h2>Select Payment Method:</h2>
+    <button type="button" id="paypalButton">Pay with PayPal</button>
+    <button type="button" id="mpesaButton">Pay with M-Pesa</button>
+
+    <div id="mpesaForm" style="display:none;">
+        <input type="number" id="phone" name="phone" placeholder="Enter Phone Number" required>
+        <input type="number" id="amount" name="amount" placeholder="Enter Amount" required>
+        <button type="submit">Pay with M-Pesa</button>
+    </div>
+</form>
+
+
+<script>
+    document.getElementById("mpesaButton").addEventListener("click", function() {
+        document.getElementById("mpesaForm").style.display = "block";
+    });
+    
+    document.getElementById("paymentForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+    
+        var phone = document.getElementById("phone").value;
+        var amount = document.getElementById("amount").value;
+    
+        // Get CSRF token from cookies
+        function getCSRFToken() {
+            return document.cookie.split('; ')
+                .find(row => row.startsWith('csrftoken='))
+                ?.split('=')[1];
+        }
+    
+        fetch("/mpesa/initiate/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+                "X-CSRFToken": getCSRFToken()  // Include CSRF token here
+            },
+            body: new URLSearchParams({phone: phone, amount: amount})
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("CSRF Token Missing or Invalid");
+            }
+            return response.json();
+        })
+        .then(data => alert("Payment Request Sent! Check your phone to complete the transaction."))
+        .catch(error => console.error(error));
+    });
+    </script>
+    

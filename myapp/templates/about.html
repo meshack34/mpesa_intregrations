@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - LEAD{% endblock %}
+
+{% block content %}
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - LEAD NGO</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/ourstory.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="icon" href="{% static 'images/logo.png' %}" type="image/png">
+</head>
+<body>
+
+<!-- Header and Navigation -->
+{% include 'header.html' %}
+
+<!-- Hero Section -->
+<section class="intro">
+    <div class="intro-text">
+        <h1>Our Story</h1>
+        <p>LEAD ORGANIZATION-impact training and innovative software solutions.</p>
+    </div>
+</section>
+
+<!-- Our Story Section -->
+<section class="story">
+    <div class="content">
+        <h2>Founding Background</h2>
+        <p>Lead in Empowerment for accelerated
+            Development(LEAD) is Non-Government
+            Organization founded and Registered on
+            20 th December December,2022
+            LEAD Organization was founded on the
+            principles of sustainable technology
+            transfer to address food insecurity, Youth
+            in Agriculture, Environmental concerns,
+            Promoting ICT access to health care
+            services, Provision of Bursary to the
+            needy, Education and social justice
+        </p>
+        <p>We have strived to create sustainable change through
+            our programs such as Food and nutrition security,
+            Environmental conservation, Enterprise Development,
+            Water harvesting for domestic use and Small
+            irrigation, Youth mentorship program and Youth In
+            Agriculture , Health and Education, Bursary Fund,
+            Pastoral and social justice</p>
+
+        <h2>Key Milestones</h2>
+        <div class="milestones">
+            <div class="milestone">
+                <h3>2020: The Beginning</h3>
+                <p>The company was officially founded, with a primary focus on software development and digital skills training in Kenya.</p>
+            </div>
+            <div class="milestone">
+                <h3>2021: First Major Training Program</h3>
+                <p>LEAD NGO launched its first comprehensive training program, providing over 500 professionals with critical digital skills.</p>
+            </div>
+            <div class="milestone">
+                <h3>2022: AI-Powered Learning Solutions</h3>
+                <p>We introduced AI-driven learning solutions, helping businesses improve employee performance and engagement.</p>
+            </div>
+            <div class="milestone">
+                <h3>2023: Expanding Our Reach</h3>
+                <p>LEAD NGO expanded its services to multiple African countries, reaching over 2,000 individuals with transformative digital skills training.</p>
+            </div>
+            <div class="milestone">
+                <h3>2024: International Partnerships & Growth</h3>
+                <p>We formed strategic partnerships with international organizations, bringing high-quality education to thousands globally.</p>
+            </div>
+            <div class="milestone">
+                <h3>2025: Launch of Online Academy</h3>
+                <p>We officially launched our online academy, making learning accessible to a global audience with cutting-edge courses.</p>
+            </div>
+        </div>
+
+        <h2>MAIN OBJECTIVES</h2>
+        <p>
+            To alleviate poverty, promote ICT, access to health care, education and
+            improve both food security and welfare.</p>
+
+        <ul class="future-goals">
+            <li>To empower farmers and citizens by actively participate in decision
+                making and implementation process through appropriates
+                technologies and strategies to revitalize agriculture.</li>
+                <li>To provide a holistic transformation of young people and
+                disadvantaged communities by offering trainings on income
+                generating activities and exposure to life-changing innovations.</li>
+                <li>To ensure that children are safe, healthy and protected at home, in
+                schools and communities.
+                <li> To facilitate the rehabilitation of traumatized children through
+                sports, music, dance, and drama.</li>
+                <li>To support community-led initiatives with focus on using
+                sustainable technologies to enhance development.</li>
+                <li> To build capacity and sensitize children and communities on sexual
+                reproductive health rights and other preventable viral illnesses like
+                HIV and chronic hepatitis.</li>
+                <li>To provide bursaries and learning materials to the less privileged in
+                the community.</li>
+                <li>To take such steps by personal or written appeals, private
+                meetings, public meetings or representations to Parliament,</li>
+            
+        </ul>
+    </div>
+</section>
+
+
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
+{% endblock %}
+

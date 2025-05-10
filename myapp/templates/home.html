@@ -1,15 +1,159 @@
-{% extends "myapp/base.html" %}
+{% extends 'base.html' %}
+{% load static %}
 
-{% load django_bootstrap5 %}
-
-{% block title %}Home{% endblock %}
+{% block title %}Home - LEAD{% endblock %}
 
 {% block content %}
-    <h1 class="text-primary">Welcome to Bootstrap 5 with Django!</h1>
 
-    <form method="post">
-        {% csrf_token %}
-        {% bootstrap_form form %}
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEAD - Empowering Communities for Sustainable Development</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/utilities/bsb-overlay/bsb-overlay.css">
+    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/services/service-8/assets/css/service-8.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="icon" href="{% static 'images/leadlogo.jpeg' %}" type="image/png">
+
+</head>
+<body>
+
+<!-- Header and Navigation -->
+{% include 'header.html' %}
+
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1>Empowering Communities for a Sustainable Future</h1>
+            <p>At LEAD, we promote food security, youth in agriculture, education, and economic empowerment to uplift rural communities.</p>
+
+            
+
+            <div class="image-grid mt-4">
+                <div class="image-item">
+                    <img src="{% static 'images/r1.jpg' %}" alt="Image 1" class="hero-img">
+                </div>
+                <div class="image-item">
+                    <img src="{% static 'images/r2.jpg' %}" alt="Image 2" class="hero-img">
+                </div>
+                <div class="image-item">
+                    <img src="{% static 'images/r3.jpg' %}" alt="Image 3" class="hero-img">
+                </div>
+                <div class="image-item">
+                    <img src="{% static 'images/r4.jpg' %}" alt="Image 4" class="hero-img">
+                </div>
+            </div>
+
+            <div class="cta-buttons mt-4">
+                <a href="{% url 'services' %}" class="btn btn-light">PROJECTS</a>
+                <a href="{% url 'donate' %}" class="btn btn-warning">Donate Now</a>
+            </div>
+        </div>
+    </section>
+
+
+                        
+
+                    
+    <!-- Testimonials -->
+<section class="testimonials text-center" id="testimonials">
+    <div class="container">
+        <h2>Testimonials &amp; Success Stories</h2>
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="testimonial-content">
+                        <img src="{% static 'images/A1.jpg' %}" class="rounded-circle" alt="Alex">
+                        <blockquote>
+                            <p>"LEAD NGO transformed my career with hands-on learning. The AI-powered mentorship was a game-changer!"</p>
+                            <cite>- FAITH, Data Analyst</cite>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="testimonial-content">
+                        <img src="{% static 'images/B.jpg' %}" class="rounded-circle" alt="Jane">
+                        <blockquote>
+                            <p>"The custom software solutions from LEAD NGO helped our business scale rapidly and improve efficiency."</p>
+                            <cite>- FAITH, Startup Founder</cite>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA -->
+{% comment %} <section class="newpage">
+    <h2>Join Our Community </h2>
+    <a href="{% url 'courses' %}" class="btn btn-primary">Enroll Now</a>
+    <a href="{% url 'contact' %}" class="btn btn-outline-dark">Reach Us</a>
+</section> {% endcomment %}
+
+
+<style>
+    .testimonial-content {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+    }
+    .newpage.btn{
+        text-align: center;
+        padding: 20px;
+        background-color:rgb(77, 189, 73);
+        color: white;
+    }
+     .newpage{
+        text-align: center;
+        padding: 20px;
+        background-color:rgb(77, 189, 73);
+        color: white;
+    }
+    .testimonial-content img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+
+    .carousel {
+        position: relative;
+    }
+
+    .carousel-inner {
+        text-align: center;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var myCarousel = new bootstrap.Carousel(document.getElementById('testimonialCarousel'), {
+            interval: 3000, // Change slides every 3 seconds
+            pause: false
+        });
+    });
+</script>
+
+
+    <!-- Footer -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="{% static 'js/home.js' %}"></script>
+</body>
+</html>
 {% endblock %}

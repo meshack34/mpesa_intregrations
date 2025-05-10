@@ -1,0 +1,9 @@
+/* Custom Styles for the Workshop Detail Page */
+h2 {
+    color: #32758c; /* TechAkili's main color */
+}
+
+p {
+    font-size: 1.1rem;
+    color: #333;
+}

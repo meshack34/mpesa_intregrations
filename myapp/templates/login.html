@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home - LEAD{% endblock %}
+
+{% block content %}
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - TechAkili Technologies</title>
+
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+  <link rel="icon" href="{% static 'images/logo.png' %}" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+  <!-- Header -->
+  {% include 'header.html' %}
+
+  <!-- Login Section -->
+  <section id="login-section" class="login-section">
+    <div id="login-container">
+      
+    </div></div>
+
+      <!-- Right Side: Login Form -->
+      <div id="login-form-container">
+        <h2>Log in</h2>
+        <form id="login-form" action="{% url 'login' %}" method="POST">
+          {% csrf_token %}
+          {{ form.as_p }}
+
+          <div id="remember-me-container">
+            <input type="checkbox" name="remember_me" id="remember_me">
+            <label for="remember_me">Keep me logged in</label>
+          </div>
+
+          <button id="login-btn" type="submit">Log in now</button>
+        </form>
+
+        <p>I have never Created an Account</p>
+        <!-- Buttons for Register & Forgot Password -->
+        <div id="action-buttons">
+          <a href="{% url 'register' %}">
+            <button id="register-btn" type="button">Create new account</button>
+          </a>
+          <a href="{% url 'forgot_password' %}">
+            <button id="forgot-password-btn" type="button">Forgot password?</button>
+          </a>
+        </div>
+        {% if messages %}
+        <div class="container">
+          {% for message in messages %}
+            <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %} alert-dismissible fade show" role="alert">
+              {{ message }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+      
+        <!-- Social Login -->
+        <div id="social-login">
+          <p>Or sign in with</p>
+          <div id="social-buttons">
+            <a href="{% url 'social:begin' 'google-oauth2' %}" class="social-btn google-btn">
+              <i class="fab fa-google"></i> Google
+            </a>
+          </div>
+        </div>
+      </div><!-- End login-form-container -->
+    </div><!-- End login-container -->
+  </section>
+
+</body>
+</html>
+
+{% endblock %}

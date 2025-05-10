@@ -1,0 +1,177 @@
+:root {
+    --primary-color: #00762f;
+    --secondary-color: #dbf2fa;
+    --light-blue-1: #dcf3fb;
+    --light-blue-2: #ddf3fb;
+    --light-blue-3: #e3f7ff;
+    --light-blue-4: #e1f6ff;
+    --highlight-color: #ff9f00;
+    --white: #ffffff;
+}
+
+/* Global Styles */
+body {
+    background-color: var(--light-blue-3);
+    color: var(--primary-color);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header & Navigation */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color); /* Ensure background is set */
+    z-index: 1000; /* Ensures it stays on top of other elements */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+/* Navbar Styling */
+.navbar {
+    font-weight: bold;
+    background-color: var(--primary-color);
+    padding: 0.8rem 1rem;
+}
+
+/* Branding: Aligns logo & name to the leftmost margin */
+.navbar-brand {
+    margin-left: 0;  /* Ensures full left alignment */
+    display: flex;
+    align-items: center;
+}
+
+/* Logo Styling */
+.navbar-brand img.logo {
+    max-width: 50px;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* Brand Name */
+.navbar-brand .brand-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+    font-weight: bold;
+    color: var(--primary-color);
+    padding: 10px 100px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Adds space between navbar items */
+.navbar-nav .nav-item {
+    margin-right: 25px;
+}
+
+/* Hover Effects */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--highlight-color);
+    transform: scale(1.05);
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+}
+
+.dropdown-item {
+    font-size: 1rem;
+    color: white;
+    padding: 10px;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Dropdown Hover Effect */
+.navbar-nav .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* Removes default dropdown delay */
+}
+
+/* Optional: Add Smooth Fade Effect */
+.dropdown-menu {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 5px 0;
+    }
+
+    .navbar-collapse {
+        background: var(--primary-color);
+        padding: 10px;
+        border-radius: 10px;
+    }
+}
+
+/* Navbar Toggle Button */
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    outline: none;
+    box-shadow: none;
+}
+/* Ensure Nav Links Are Visible in Collapsed Mode on Small Screens */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: white !important; /* Set background for the toggled menu */
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .navbar-nav .nav-link {
+        color: #03c119 !important; 
+        display: block;
+        padding: 10px;
+        font-size: 1.1rem;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+        color: var(--highlight-color); /* Highlight color when hovered or active */
+    }
+
+    /* Ensure Dropdown Items are Visible */
+    .dropdown-menu {
+        background-color: white !important;
+        border-radius: 5px;
+    }
+
+    .dropdown-item {
+        color: black !important;
+    }
+
+    .dropdown-item:hover {
+        background-color: var(--highlight-color);
+        color: white !important;
+    }
+}

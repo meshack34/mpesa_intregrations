@@ -1,0 +1,253 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding-top: 80px; /* Prevent header overlap */
+    box-sizing: border-box;
+    background-color: #e3f7ff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Wrapper for Layout */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    height: 80px;
+    flex-shrink: 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Content */
+.content {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+    width: 100%;
+    margin-top: 80px;
+}
+
+/* Call-to-Action Section */
+#partnership-cta {
+    background: linear-gradient(135deg, #32758c, #b08540, #32758c);
+    color: white;
+    text-align: center;
+    padding: 4vw; /* Relative padding */
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    margin: 5vh auto;
+    max-width: 90%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* CTA Heading */
+.cta-heading {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* CTA Text */
+.cta-text {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+/* Glowing Button */
+.btn-primary-glow {
+    background: #03558c;
+    color: white;
+    border: none;
+    padding: 1vw 2vw;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(110, 84, 43, 0.8);
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+    animation: pulse 2s infinite;
+}
+
+.btn-primary-glow:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px rgb(252, 190, 118);
+}
+
+/* Popup Overlay */
+#popup-overlay {
+    display: none; /* Ensure it's initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 999;
+}
+
+#popup-overlay.active {
+    display: block; /* Fix: Ensure it becomes visible */
+    opacity: 1;
+}
+
+/* Popup Form */
+.popup-form-container {
+    display: none; /* Fix: Initially hidden */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    width: 90%;
+    max-width: 480px;
+    background: white;
+    padding: 3vw;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.popup-form-container.active {
+    display: block; /* Fix: Ensure it appears */
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+/* Popup Content */
+.popup-form-content {
+    position: relative;
+    padding: 20px;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+.close-btn:hover {
+    color: #ff9f00;
+}
+
+/* Form Fields */
+.popup-form-content input,
+.popup-form-content select,
+.popup-form-content textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+/* Submit Button */
+.btn-success {
+    background-color: #32758c;
+    color: white;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-success:hover {
+    background-color: #ff9f00;
+}
+
+/* Footer */
+.footer {
+    background-color: #275e6b;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+}
+
+/* Partner Showcase Section */
+#partnership-intro {
+    text-align: center;
+    padding: 50px 15%;
+}
+
+/* Carousel Image Styling */
+.partner-img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    object-fit: contain;
+    margin: 10px;
+    border-radius: 50%;
+    background: #ffffff;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure Proper Alignment of Images */
+.carousel-item .d-flex {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Responsive Design */
+
+/* Mobile Devices */
+@media (max-width: 576px) {
+    .partner-img {
+        max-width: 100px;
+    }
+
+    .popup-form-container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .cta-heading {
+        font-size: 1.8rem;
+    }
+
+    .cta-text {
+        font-size: 1.2rem;
+    }
+}
+
+/* Tablets */
+@media (min-width: 577px) and (max-width: 991px) {
+    .partner-img {
+        max-width: 120px;
+    }
+}
+
+/* Laptops and Large Screens */
+@media (min-width: 992px) {
+    .partner-img {
+        max-width: 150px;
+    }
+}

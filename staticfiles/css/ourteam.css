@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700');
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #323232;
+    font-size: 15px;
+    font-weight: 400;
+    background: #f9f9f9;
+}
+
+/* Heading Title */
+.heading-title {
+    margin-bottom: 80px;
+}
+.text-center {
+    text-align: center;
+}
+.heading-title h3 {
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.p-top-30 {
+    padding-top: 30px;
+}
+.half-txt {
+    width: 60%;
+    margin: 0 auto;
+    display: inline-block;
+    line-height: 25px;
+    color: #7e7e7e;
+}
+
+/* Team Member */
+.team-member {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+/* Image */
+.team-img img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Hover Effect */
+.team-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.90);
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.team-member:hover .team-hover {
+    opacity: 1;
+}
+
+/* Hover Text */
+.team-hover .desk {
+    text-align: center;
+    padding: 15px;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: 0.3s;
+}
+.team-member:hover .team-hover .desk {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Social Links */
+.s-link {
+    text-align: center;
+    margin-top: 15px;
+}
+.s-link a {
+    font-size: 18px;
+    color: #222;
+    margin: 0 8px;
+    transition: 0.3s;
+}
+.s-link a:hover {
+    color: #007bff;
+}
+
+/* Team Title */
+.team-title {
+    padding: 15px 0;
+    text-align: center;
+    background: #fff;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.team-title h5 {
+    margin: 0;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.team-title span {
+    font-size: 12px;
+    color: #a5a5a5;@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700');
+
+    body {
+        font-family: 'Source Sans Pro', sans-serif;
+        background: #f9f9f9;
+        color: #323232;
+        font-size: 15px;
+        font-weight: 400;
+    }
+    
+    /* Heading */
+    .heading-title {
+        margin-bottom: 80px;
+    }
+    .text-center {
+        text-align: center;
+    }
+    .heading-title h3 {
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+    .p-top-30 {
+        padding-top: 30px;
+    }
+    .half-txt {
+        width: 60%;
+        margin: 0 auto;
+        display: inline-block;
+        line-height: 25px;
+        color: #7e7e7e;
+    }
+    
+    /* Team Member Card */
+    .team-member {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+        background: white;
+        height: 450px; /* Ensures uniform card height */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+    }
+    
+    /* Image */
+    .team-img {
+        width: 100%;
+        height: 300px; /* Ensures uniform image size */
+        overflow: hidden;
+    }
+    .team-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures images fit without distortion */
+    }
+    
+    /* Hover Effect */
+    .team-hover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.90);
+        opacity: 0;
+        transition: 0.3s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .team-member:hover .team-hover {
+        opacity: 1;
+    }
+    
+    /* Hover Text */
+    .team-hover .desk {
+        text-align: center;
+        padding: 15px;
+        transform: translateY(-20px);
+        opacity: 0;
+        transition: 0.3s;
+    }
+    .team-member:hover .team-hover .desk {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+    /* Social Links */
+    .s-link {
+        text-align: center;
+        margin-top: 15px;
+    }
+    .s-link a {
+        font-size: 18px;
+        color: #222;
+        margin: 0 8px;
+        transition: 0.3s;
+    }
+    .s-link a:hover {
+        color: #a56c37;
+    }
+    
+    /* Team Title */
+    .team-title {
+        padding: 15px 0;
+        text-align: center;
+        background: #fff;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        height: 100px; /* Ensures title doesn't push the card size */
+    }
+    .team-title h5 {
+        margin: 0;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    .team-title span {
+        font-size: 12px;
+        color: #a5a5a5;
+        letter-spacing: 1px;
+    }
+    
+    letter-spacing: 1px;
+}

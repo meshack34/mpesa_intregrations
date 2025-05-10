@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home - LEAD{% endblock %}
+
+{% block content %}
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner with Us - LEAD NGO</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/partners.css' %}">
+    <link rel="icon" href="{% static 'images/logo.png' %}" type="image/png">
+
+</head>
+<body>
+    <!-- Include Header -->
+    {% include 'header.html' %}
+
+    <!-- Partnership Introduction Section -->
+    <section id="partnership-intro" class="container text-center mt-5">
+        <h1>Partner with LEAD NGO</h1>
+        <p class="lead">
+            We collaborate with TVET institutions, schools, and businesses to provide access to resources, 
+            internships, and software development. Let's build the future together!
+        </p>
+    </section>
+
+    <!-- Partner Showcase Carousel -->
+    <section id="partner-showcase" class="container mt-4">
+        <div id="partnerCarousel" class="carousel slide" data-bs-ride="carousel">
+            <!-- Carousel Inner Content -->
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-center flex-wrap">
+                        <img src="{% static 'images/C.jpg' %}" class="partner-img" alt="Partner 1">
+                        <img src="{% static 'images/E.jpg' %}" class="partner-img" alt="Partner 2">
+                        <img src="{% static 'images/D.jpg' %}" class="partner-img" alt="Partner 3">
+                        <img src="{% static 'images/F.jpg' %}" class="partner-img" alt="Partner 4">
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+     <!----           <div class="carousel-item">
+                    <div class="d-flex justify-content-center flex-wrap">
+                        <img src="{% static 'images/essy.jpg' %}" class="partner-img" alt="Partner 5">
+                        <img src="{% static 'images/download.png' %}" class="partner-img" alt="Partner 6">
+                        <img src="{% static 'images/r4.jpg' %}" class="partner-img" alt="Partner 7">
+                        <img src="{% static 'images/r3.jpg' %}" class="partner-img" alt="Partner 8">
+                    </div>
+                </div>
+                <!-- Slide 3 --
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center flex-wrap">
+                        <img src="{% static 'images/r2.jpg' %}" class="partner-img" alt="Partner 9">
+                        <img src="{% static 'images/hazel.jpg' %}" class="partner-img" alt="Partner 10">
+                        <img src="{% static 'images/amon.jpg' %}" class="partner-img" alt="Partner 11">
+                        <img src="{% static 'images/download.png' %}" class="partner-img" alt="Partner 12">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#partnerCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#partnerCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#partnerCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                <button type="button" data-bs-target="#partnerCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#partnerCarousel" data-bs-slide-to="2"></button>
+            </div>
+        </div>
+    </section>
+
+  <!-- Call-to-Action Section -->
+<section id="partnership-cta" class="text-center">
+    <div class="cta-content">
+        <h2 class="cta-heading">Partner with Us!</h2>
+        <p class="cta-text">Join our mission to innovate, empower, and transform lives.</p>
+        <!-- Bootstrap Button to Trigger Modal -->
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#partnershipModal">
+            Apply for Partnership
+        </button>
+    </div>
+</section>
+
+<!-- Bootstrap Partnership Modal -->
+<div class="modal fade" id="partnershipModal" tabindex="-1" aria-labelledby="partnershipModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="partnershipModalLabel">Partnership Application</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Partnership Form -->
+                <form action="{% url 'submit_partnership' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <input type="text" name="organization_name" class="form-control" placeholder="Organization Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" name="contact_person" class="form-control" placeholder="Contact Person" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="tel" name="phone" class="form-control" placeholder="Phone Number" required>
+                    </div>
+                    <div class="mb-3">
+                        <select name="partnership_type" class="form-select" required>
+                            <option value="">Select Partnership Type</option>
+                            <option value="education">Education &amp Training</option>
+                            <option value="internships">Internships &amp Mentorship</option>
+                            <option value="software_development">Software Development</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <textarea name="message" class="form-control" placeholder="Additional Details"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">Submit</button>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</div>
+{% if messages %}
+    <div class="alert-container">
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+
+   
+
+    <!-- Bootstrap JS and Dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+<!-- Custom JS -->
+<script src="{% static 'js/partners.js' %}"></script>
+
+</body>
+</html>
+
+{% endblock %}

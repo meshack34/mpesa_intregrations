@@ -1,0 +1,100 @@
+/* Define Global Variables */
+:root {
+    --primary-color: #32758c;
+    --secondary-color: #dbf2fa;
+    --light-blue-1: #dcf3fb;
+    --light-blue-2: #ddf3fb;
+    --light-blue-3: #e3f7ff;
+    --light-blue-4: #e1f6ff;
+    --highlight-color: #ff9f00;
+    --white: #ffffff;
+}
+
+/* Global Styles */
+body {
+    background-color: var(--light-blue-3);
+    color: var(--primary-color);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Hero Section */
+.hero-section {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+}
+
+}
+.container {
+    max-width: 1200px;
+}
+
+
+/* Card Section */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: #ff9f00;
+    border-color: #ff9f00;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #ff8c00;
+    border-color: #ff8c00;
+}
+
+/* Call-to-Action Section */
+#cta-section {
+    background-color: #32758c;
+    color: white;
+}
+
+.custom-cta-btn {
+    background-color: #ff9f00;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.custom-cta-btn:hover {
+    background-color: #ff8c00;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #275e6b;
+    color: white;
+}
+
+footer p {
+    margin: 0;
+    padding: 10px 0;
+}

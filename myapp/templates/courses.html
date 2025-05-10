@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home - LEAD{% endblock %}
+
+{% block content %}
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechAkili Technologies - Courses</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/courses.css' %}">
+</head>
+<body>
+
+    <!-- Default Header -->
+    {% include 'header.html' %}
+
+    <div class="container ">
+        <h1 class="text-center mb-4">Explore Our Courses</h1>
+
+        <!-- Course Section -->
+        <div class="row">
+            <!-- Data Science & Data Analytics -->
+            <div class="col-md-6">
+                <div class="course-card">
+                    <h3>📊 Data Science & Data Analytics</h3>
+                    <p><strong>📌 Overview:</strong> Master data-driven decision-making, predictive analytics, and visualization using cutting-edge tools.</p>
+                    <ul>
+                        <li>Data Analysis: Excel, SQL, Pandas, NumPy</li>
+                        <li>Data Visualization: Matplotlib, Seaborn, Power BI, Tableau</li>
+                        <li>Machine Learning: Scikit-learn, TensorFlow, PyTorch</li>
+                        <li>Big Data & Cloud Analytics: Apache Spark, Hadoop, AWS Athena</li>
+                    </ul>
+                    <p><strong>🎓 Related Courses:</strong> Business Intelligence, Predictive Analytics, Time-Series Forecasting</p>
+                    <button class="btn btn-primary enroll-btn" onclick="showForm('Data Science & Data Analytics')">Enroll Now</button>
+                </div>
+            </div>
+
+            <!-- Cloud Computing -->
+            <div class="col-md-6">
+                <div class="course-card">
+                    <h3>☁️ Cloud Computing</h3>
+                    <p><strong>📌 Overview:</strong> Learn how to design, deploy, and manage scalable cloud-based applications using leading cloud providers.</p>
+                    <ul>
+                        <li>Cloud Platforms: AWS, Microsoft Azure, Google Cloud</li>
+                        <li>Serverless Computing, Containerization, Kubernetes</li>
+                        <li>Cloud Security & Compliance, CI/CD Pipelines</li>
+                    </ul>
+                    <p><strong>🎓 Related Courses:</strong> AWS Solutions Architect, Azure DevOps, Cloud Security</p>
+                    <button class="btn btn-primary enroll-btn" onclick="showForm('Cloud Computing')">Enroll Now</button>
+                </div>
+            </div>
+
+            <!-- Networking -->
+            <div class="col-md-6">
+                <div class="course-card">
+                    <h3>🌐 Networking</h3>
+                    <p><strong>📌 Overview:</strong> Gain deep expertise in networking fundamentals, security, and troubleshooting using industry-standard tools.</p>
+                    <ul>
+                        <li>Networking Basics: TCP/IP, OSI Model, Subnetting</li>
+                        <li>Routing & Switching: Cisco, Juniper, MikroTik</li>
+                        <li>Network Automation, Cloud Networking</li>
+                    </ul>
+                    <p><strong>🎓 Related Courses:</strong> CCNA, CCNP, Network Security</p>
+                    <button class="btn btn-primary enroll-btn" onclick="showForm('Networking')">Enroll Now</button>
+                </div>
+            </div>
+
+            <!-- Cybersecurity -->
+            <div class="col-md-6">
+                <div class="course-card">
+                    <h3>🛡️ Cybersecurity</h3>
+                    <p><strong>📌 Overview:</strong> Develop expertise in securing digital assets, ethical hacking, and threat intelligence.</p>
+                    <ul>
+                        <li>Cybersecurity Fundamentals, Network Security</li>
+                        <li>Ethical Hacking & Penetration Testing</li>
+                        <li>Forensics & Malware Analysis</li>
+                    </ul>
+                    <p><strong>🎓 Related Courses:</strong> CEH, OSCP, Security+, Digital Forensics</p>
+                    <button class="btn btn-primary enroll-btn" onclick="showForm('Cybersecurity')">Enroll Now</button>
+                </div>
+            </div>
+
+            <!-- AI & ML -->
+            <div class="col-md-6">
+                <div class="course-card">
+                    <h3>🤖 AI & Machine Learning</h3>
+                    <p><strong>📌 Overview:</strong> Explore the world of AI and ML, building intelligent applications that learn and adapt.</p>
+                    <ul>
+                        <li>Deep Learning, NLP, Computer Vision</li>
+                        <li>AI for Business: Chatbots, Recommender Systems</li>
+                        <li>Deploying AI Models with Flask, FastAPI</li>
+                    </ul>
+                    <p><strong>🎓 Related Courses:</strong> Deep Learning, AI Ethics, Advanced NLP</p>
+                    <button class="btn btn-primary enroll-btn" onclick="showForm('AI & ML')">Enroll Now</button>
+                </div>
+            </div>
+
+            <!-- Software Development -->
+            <div class="col-md-6">
+                <div class="course-card">
+                    <h3>💻 Software Development</h3>
+                    <p><strong>📌 Overview:</strong> Master full-stack development with industry-leading technologies.</p>
+                    <ul>
+                        <li>Front-End Development: React, Vue, Angular</li>
+                        <li>Back-End: Django, Flask, Node.js</li>
+                        <li>Microservices, Software Testing, CI/CD</li>
+                    </ul>
+                    <p><strong>🎓 Related Courses:</strong> Full-Stack Development, Game Development</p>
+                    <button class="btn btn-primary enroll-btn" onclick="showForm('Software Development')">Enroll Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enrollment Form (Popup) -->
+    <div class="form-container" id="enrollForm">
+        <button class="close-btn" onclick="closeForm()">X</button>
+        <h2>Enroll in <span id="courseName"></span></h2>
+        <form action="{% url 'enroll' %}" method="POST">
+            {% csrf_token %}
+            <label>Name:</label>
+            <input type="text" name="name" required><br><br>
+            <label>Email:</label>
+            <input type="email" name="email" required><br><br>
+            <input type="hidden" name="course" id="selectedCourse">
+            <button type="submit">Submit</button>
+        </form>
+        {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    
+            
+    </div>
+
+    <script>
+        function showForm(course) {
+            document.getElementById("enrollForm").style.display = "block";
+            document.getElementById("courseName").textContent = course;
+            document.getElementById("selectedCourse").value = course;
+        }
+        function closeForm() {
+            document.getElementById("enrollForm").style.display = "none";
+        }
+
+            function closeForm() {
+        document.getElementById("enrollForm").style.display = "none";
+        document.getElementById("selectedCourse").value = "";
+        document.getElementById("courseName").textContent = "";
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("#enrollForm form");
+    form.addEventListener("submit", function () {
+        alert("Thank you for enrolling! We will contact you soon.");
+        closeForm();
+    });
+});
+
+
+    </script>
+
+</body>
+</html>
+
+{% endblock %}

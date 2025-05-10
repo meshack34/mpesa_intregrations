@@ -1,0 +1,175 @@
+
+    :root {
+        --primary-color: #32758c;
+        --secondary-color: #267f9c;
+        --light-blue-1: #4799b4;
+        --light-blue-2: #1a789b;
+        --light-blue-3: #39525c;
+        --light-blue-4: #14303b;
+        --highlight-color: #ff9f00;
+        --white: #0d5483;
+    }
+    
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1, h2, h3, h4 {
+    color: #137cb9;
+}
+/* Header & Navigation */
+.navbar {
+    font-weight: bold;
+    background-color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    height: 70px; 
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.navbar-brand img.logo {
+    max-width: 60px;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* Nav Links */
+.navbar-nav .nav-link {
+    font-weight: bold;
+    color: var(--primary-color);
+    padding: 8px 15px;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--highlight-color);
+}
+/* Hero Section */
+.hero-section {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+}
+
+.cta-buttons .btn {
+    margin: 10px;
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.cta-buttons .btn-light {
+    background-color: var(--white);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.cta-buttons .btn-light:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-5px);
+}
+
+.cta-buttons .btn-warning {
+    background-color: var(--highlight-color);
+    color: var(--white);
+}
+
+.cta-buttons .btn-warning:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-5px);
+}
+
+/* Careers Section */
+.careers-section {
+    background-color: #09569e;
+    padding: 50px 20px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(5, 67, 121, 0.1);
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.careers-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.careers-section p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.career-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.career-item {
+    background: #0d78c5;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(7, 91, 131, 0.1);
+    transition: 0.3s;
+}
+
+.career-item:hover {
+    background: #0e6dbb;
+}
+
+.career-item h4 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.career-item p {
+    font-size: 1rem;
+    color: #0a5181;
+}
+
+/* Application Button */
+.apply-btn {
+    display: inline-block;
+    background: #007bff;
+    color: #1883b4;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.apply-btn:hover {
+    background: #094483;
+}

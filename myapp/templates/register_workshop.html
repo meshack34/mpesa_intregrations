@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home - LEAD{% endblock %}
+
+{% block content %}
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register for Workshop</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/register_workshop.css' %}">
+    
+    <!-- FontAwesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Header Section -->
+    {% include 'header.html' %}
+
+    <!-- Main Content -->
+    <div class="container">
+        <h2 class="text-center my-4">Register for Workshop</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="workshop">Select Workshop</label>
+                <select class="form-control" id="workshop" name="workshop" required>
+                    <option value="ai_ml_beginners">AI and Machine Learning for Beginners</option>
+                    <option value="data_science_advanced">Advanced Data Science Techniques</option>
+                    <option value="tech_entrepreneurship">Tech Entrepreneurship Bootcamp</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary my-3">Submit</button>
+        </form>
+
+        <!-- Social Login -->
+        <div id="social-login">
+            <p>Or register using:</p>
+            <div id="social-buttons">
+                <a href="#" class="social-btn google-btn">
+                    <i class="fab fa-google"></i> Google
+                </a>
+                <a href="#" class="social-btn linkedin-btn">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+{% endblock %}

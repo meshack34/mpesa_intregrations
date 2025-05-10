@@ -1,0 +1,695 @@
+:root {
+    --primary-color: #32758c;
+    --secondary-color: #dbf2fa;
+    --light-blue-1: #dcf3fb;
+    --light-blue-2: #ddf3fb;
+    --light-blue-3: #e3f7ff;
+    --light-blue-4: #e1f6ff;
+    --light-blue-5: #20bbfe;
+    --highlight-color: #ff9f00;
+    --white: #ffffff;
+}
+
+/* Global Styles */
+body {
+    background-color: var(--light-blue-3);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Header & Navigation */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar Styling */
+.navbar {
+    font-weight: bold;
+    background-color: var(--primary-color);
+    padding: 0.8rem 1rem;
+}
+
+/* Branding: Aligns logo & name to the leftmost margin */
+.navbar-brand {
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Logo Styling */
+.navbar-brand img.logo {
+    max-width: 50px;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* Brand Name */
+.navbar-brand .brand-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+    font-weight: bold;
+    color: var(--primary-color);
+    padding: 10px 18px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Adds space between navbar items */
+.navbar-nav .nav-item {
+    margin-right: 15px;
+}
+
+/* Hover Effects */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--highlight-color);
+    transform: scale(1.05);
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+}
+
+.dropdown-item {
+    font-size: 1rem;
+    color: white;
+    padding: 10px;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Dropdown Hover Effect */
+.navbar-nav .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+/* Optional: Add Smooth Fade Effect */
+.dropdown-menu {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 5px 0;
+    }
+
+    .navbar-collapse {
+        background: var(--primary-color);
+        padding: 10px;
+        border-radius: 10px;
+    }
+}
+
+/* Navbar Toggle Button */
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Ensure Nav Links Are Visible in Collapsed Mode on Small Screens */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: white !important;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .navbar-nav .nav-link {
+        color: #32758c !important;
+        display: block;
+        padding: 10px;
+        font-size: 1.1rem;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+        color: var(--highlight-color);
+    }
+
+    /* Ensure Dropdown Items are Visible */
+    .dropdown-menu {
+        background-color: white !important;
+        border-radius: 5px;
+    }
+
+    .dropdown-item {
+        color: black !important;
+    }
+
+    .dropdown-item:hover {
+        background-color: var(--highlight-color);
+        color: white !important;
+    }
+}
+
+/* Offer Section Styling */
+.offer-section {
+    margin-top: 88px;  /*Adjusted padding to clear the fixed header */
+    padding-bottom: 80px;
+    background: linear-gradient(to bottom right, var(--primary-color),#427388, var(--highlight-color),var(--primary-color) );
+    color: var(--white);
+    position: relative;
+    z-index: 1;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure the text inside the section is well-aligned */
+.offer-section h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: var(--white);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.offer-section p {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: var(--white);
+    max-width: 800px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Queries for different screen sizes */
+
+/* Small screens (phones in portrait) */
+@media (max-width: 575px) {
+    .offer-section {
+        padding-top: 140px; /* Slightly smaller padding for smaller devices */
+    }
+
+    .offer-section h1 {
+        font-size: 2rem;
+    }
+
+    .offer-section p {
+        font-size: 1rem;
+    }
+}
+
+/* Medium screens (tablets in portrait or landscape) */
+@media (max-width: 767px) {
+    .offer-section {
+        padding-top: 150px; /* Slightly smaller padding for medium devices */
+    }
+
+    .offer-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .offer-section p {
+        font-size: 1.1rem;
+    }
+}
+
+/* Larger tablets or small laptops */
+@media (max-width: 991px) {
+    .offer-section {
+        padding-top: 160px;
+    }
+
+    .offer-section h1 {
+        font-size: 2.4rem;
+    }
+
+    .offer-section p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Laptops */
+@media (max-width: 1200px) {
+    .offer-section {
+        padding-top: 170px; /* Adjust padding for laptop screens */
+    }
+
+    .offer-section h1 {
+        font-size: 2.6rem;
+    }
+
+    .offer-section p {
+        font-size: 1.3rem;
+    }
+}
+
+/* Extra large screens (desktops) */
+@media (min-width: 1201px) {
+    .offer-section {
+        padding-top: 180px; /* Adjust padding for larger screens */
+    }
+
+    .offer-section h1 {
+        font-size: 3rem;
+    }
+
+    .offer-section p {
+        font-size: 1.4rem;
+    }
+}
+
+
+/* Educational Solutions Section */
+.educational-solutions {
+    position: relative;
+    text-align: center;
+    background-image: url('{% static 'images/t.png' %}');
+    background-size: cover;
+    background-position: center;
+    padding: 5rem 0;
+    color: white;
+}
+
+/* Educational Solutions Section */
+.educational-solutions {
+    position: relative;
+    text-align: center;
+    background-image: url('{% static 'images/t.png' %}');
+    background-size: cover;
+    background-position: center;
+    padding: 5rem 0;
+    color: white;
+}
+
+/* Educational Solutions Section */
+.educational-solutions {
+    background-size: cover;
+    background-position: center;
+    padding: 60px 0;
+    color: #fff;
+    position: relative;
+}
+
+.educational-solutions:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better text contrast */
+    z-index: 1;
+}
+
+.educational-solutions .container {
+    position: relative;
+    z-index: 2;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.section-subtitle {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #e1e1e1;
+    margin-bottom: 40px;
+}
+
+.offer-card {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.offer-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.offer-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.offer-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #32758c;
+    margin-top: 20px;
+}
+
+.offer-text {
+    font-size: 1rem;
+    color: #333;
+    margin: 15px 0;
+}
+
+.offer-link {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #ff9f00;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.offer-link:hover {
+    color: #e6b800;
+}
+
+/* Responsive Design: 4 Cards in a Row for Larger Screens */
+@media (min-width: 992px) {
+    .offer-card {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 991px) {
+    .educational-solutions .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .offer-card {
+        flex: 0 0 48%; /* Two cards in a row */
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .offer-card {
+        flex: 0 0 100%; /* One card per row on small screens */
+    }
+}
+/* Custom Software Section */
+#custom-software {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+}
+
+#custom-software h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #32758c;
+    margin-bottom: 30px;
+}
+
+#custom-software p {
+    font-size: 1.125rem;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+/* Card Container */
+.custom-software .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.custom-software .col-md-4 {
+    flex: 0 0 30%;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Card Styling */
+.card {
+    background-color: #fff;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px;
+    flex-grow: 1;
+}
+
+.card-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #32758c;
+    margin-bottom: 15px;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #ff9f00;
+    border-color: #ff9f00;
+    padding: 12px 25px;
+    font-weight: 600;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e68900;
+    border-color: #e68900;
+}
+
+/* Responsive Design: Card Layout */
+@media (max-width: 991px) {
+    .custom-software .col-md-4 {
+        flex: 0 0 48%; /* Two cards in a row */
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .custom-software .col-md-4 {
+        flex: 0 0 100%; /* One card per row on small screens */
+    }
+}
+/* Tech & AI Consulting Section */
+#ai-consulting {
+    background-color: #f4f4f4;
+    padding: 50px 0;
+}
+
+#ai-consulting h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #32758c;
+    margin-bottom: 30px;
+}
+
+#ai-consulting p {
+    font-size: 1.125rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+/* Card Container */
+.ai-consulting .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.ai-consulting .col-md-6 {
+    flex: 0 0 48%;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Card Styling */
+.card {
+    background-color: #fff;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px;
+    flex-grow: 1;
+}
+
+.card-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #32758c;
+    margin-bottom: 15px;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Custom Button Styles */
+.custom-btn {
+    background-color: #32758c;  /* Blue background */
+    color: #fff;                /* White text */
+    padding: 12px 25px;         /* Padding inside the button */
+    font-weight: 600;           /* Bold text */
+    border-radius: 5px;        /* Rounded corners */
+    text-transform: uppercase; /* Uppercase text */
+    text-align: center;        /* Center the text */
+    display: inline-block;     /* Inline display */
+    text-decoration: none;     /* Remove underline */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth hover transition */
+}
+
+/* Hover Effect */
+.custom-btn:hover {
+    background-color: #275e6b; /* Darker blue on hover */
+    transform: scale(1.05);     /* Slightly enlarge the button */
+}
+
+/* Focus Effect */
+.custom-btn:focus {
+    outline: none;              /* Remove focus outline */
+}
+
+/* Active Effect */
+.custom-btn:active {
+    background-color: #1e4c56;  /* Even darker blue when active */
+}
+
+
+/* Responsive Design: Card Layout */
+@media (max-width: 991px) {
+    .ai-consulting .col-md-6 {
+        flex: 0 0 48%; /* Two cards in a row */
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .ai-consulting .col-md-6 {
+        flex: 0 0 100%; /* One card per row on small screens */
+    }
+}
+/* Call to Action Section */
+.cta-section {
+    background-color: #32758c; /* TechAkili Blue */
+    color: #fff;              /* White text */
+    padding: 50px 0;          /* Vertical padding for the section */
+}
+
+/* Custom Button Styles for CTA */
+.custom-cta-btn {
+    background-color: #ff9f00; /* TechAkili Orange */
+    color: #fff;               /* White text */
+    padding: 15px 30px;        /* Padding inside the button */
+    font-weight: 600;          /* Bold text */
+    border-radius: 5px;       /* Rounded corners */
+    text-transform: uppercase;/* Uppercase text */
+    text-align: center;       /* Center the text */
+    display: inline-block;    /* Inline display */
+    text-decoration: none;    /* Remove underline */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth hover transition */
+}
+
+/* Hover Effect for CTA Buttons */
+.custom-cta-btn:hover {
+    background-color: #e68900; /* Darker orange on hover */
+    transform: scale(1.05);     /* Slightly enlarge the button */
+}
+
+/* Focus Effect for CTA Buttons */
+.custom-cta-btn:focus {
+    outline: none;             /* Remove focus outline */
+}
+
+/* Active Effect for CTA Buttons */
+.custom-cta-btn:active {
+    background-color: #cc7b00; /* Even darker orange when active */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #275e6b; /* Darker TechAkili Blue */
+    color: #fff;               /* White text */
+    padding: 10px 0;           /* Thin footer padding */
+    text-align: center;        /* Center the footer text */
+}

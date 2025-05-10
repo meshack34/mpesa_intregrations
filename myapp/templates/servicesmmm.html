@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home - LEAD{% endblock %}
+
+{% block content %}
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>What We Offer - LEAD NGO Technologies</title>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'css/services.css' %}">
+        <link rel="icon" href="{% static 'images/logo.png' %}" type="image/png">
+    </head>
+    <body>
+
+        <!-- Header and Navigation -->
+        {% include 'header.html' %}
+        <section id="transforming-education" class="offer-section py-5">
+               <div class="container text-center">
+                   <h1>LEAD Projects</h1>
+    <div class="project-section">
+        <h2>1.0 Capacity Building</h2>
+        <p>LEAD facilitates knowledge and skills acquisition for rural communities, enabling effective participation in livelihood projects. This is achieved through periodical training for farmer groups. Our team comprises experienced specialists in agriculture, livestock, and community development, dedicated to capacity building.</p>
+    </div>
+
+    <div class="project-section">
+        <h2>2.0 Livelihood Projects/TIMPs</h2>
+        <p>LEAD encourages investment in income-generating activities to improve living standards through innovative technologies, targeting vulnerable groups with support in inputs and materials.</p>
+        
+        <h3>A) Dairy Production (10 Litre Milk Project)</h3>
+        <p>Supports small-scale dairy farmers with training in pasture management, housing, feeding, disease control, breeding, and marketing.</p>
+        <img src="dairy.jpg" alt="Dairy Farming" class="project-image">
+
+        <h3>B) Indigenous Chicken Production</h3>
+        <p>Focuses on sourcing improved chicks, brooding, feed formulation, hatching, and disease management.</p>
+        <img src="chicken.jpg" alt="Indigenous Chicken" class="project-image">
+
+        <h3>C) Horticulture</h3>
+        <p>Promotes high-value crops such as avocados, passion fruits, carrots, and beetroots.</p>
+        
+        <h3>D) African Leafy Vegetables (ALV)</h3>
+        <p>Encourages organic production of vegetables like amaranths, spider plants, pumpkins, and black nightshade.</p>
+        
+        <h3>E) Dairy Goat Production</h3>
+        <p>Ideal for smallholder farmers, focusing on housing, breeding, feeding, and disease control.</p>
+    </div>
+
+    <div class="project-section">
+        <h2>3.0 Food Security Initiatives – Zero Hunger</h2>
+        <p>Promotes family food security by supporting traditional crops such as millet, Irish potatoes, sweet potatoes, local vegetables, bananas, and dairy goats.</p>
+    </div>
+
+    <div class="project-section">
+        <h2>4.0 Table Banking</h2>
+        <p>A group-based funding model where members save and borrow funds during meetings.</p>
+    </div>
+
+    <div class="project-section">
+        <h2>5.0 Youth in Agriculture</h2>
+        <p>Engages unemployed youth and school clubs in high-value agricultural activities.</p>
+    </div>
+
+    <div class="project-section">
+        <h2>6.0 Market Access/Value Addition</h2>
+        <p>Supports market access for home-based and agricultural products.</p>
+    </div>
+
+    <div class="project-section">
+        <h2>7.0 Education</h2>
+        <p>Promotes quality education through mentorship, bursaries, and sponsorship linkages.</p>
+    </div>
+
+    <div class="project-section">
+        <h2>8.0 Access to Healthcare</h2>
+        <p>Builds capacity on sexual reproductive health rights, HIV prevention, gender-based violence, and decision-making.</p>
+    </div>
+
+    <div class="project-section">
+        <h2>9.0 Sports, Music, Dance, and Drama</h2>
+        <p>Encourages youth talent development and reduces drug and substance abuse in communities.</p>
+    </div>
+
+
+</div>
+</section>
+
+
+
+        <!-- Bootstrap JS and Popper.js -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+        <script src="{% static 'js/static' %}"></script>
+    </body>
+</html>
+{% endblock %}

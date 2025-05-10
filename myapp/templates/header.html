@@ -1,0 +1,52 @@
+{% load static %}
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom Header CSS -->
+<link rel="stylesheet" href="{% static 'css/header.css' %}">
+
+<!-- Header and Navigation -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid"> <!-- Full-width container -->
+            <!-- Logo and Branding (Aligned to Left) -->
+            <a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}">
+                <img src="{% static 'images/leadlogo.jpeg' %}" alt="LEAD ORGANIZATION Logo" class="logo">
+                <span class="ms-2 brand-name">LEAD ORGANIZATION </span>
+            </a>
+
+            <!-- Navbar Toggle Button (For Mobile View) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'home' %}">Home</a></li>
+
+                    <!-- About Us Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle {% if '/about' in request.path %}active{% endif %}" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                            <li><a class="dropdown-item" href="{% url 'about' %}">Our Story</a></li>
+                            <li><a class="dropdown-item" href="{% url 'team' %}">Meet the Team</a></li>
+                            <li><a class="dropdown-item" href="{% url 'mission' %}">Our Mission</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Services Dropdown -->
+
+                    {% comment %} <li class="nav-item"><a class="nav-link {% if '/courses' in request.path %}active{% endif %}" href="{% url 'courses' %}">Academy</a></li> {% endcomment %}
+                    <li class="nav-item"><a class="nav-link {% if '/partners' in request.path %}active{% endif %}" href="{% url 'partners' %}">Partner With Us</a></li>
+                    <li class="nav-item"><a class="nav-link {% if '/contact' in request.path %}active{% endif %}" href="{% url 'contact' %}">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link {% if '/donate' in request.path %}active{% endif %}" href="{% url 'donate' %}">Donate</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

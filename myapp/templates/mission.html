@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home - LEAD{% endblock %}
+
+{% block content %}
+
+
+<link rel="stylesheet" href="{% static 'css/ourmission.css' %}">
+<link rel="stylesheet" href="{% static 'css/header.css' %}">
+
+{% include 'header.html' %}
+
+<!-- Hero Section -->
+<!-- Hero Section (Now Displays Mission Statement) -->
+<section class="hero-section">
+    <div class="container text-center">
+        <h2 class="section-title">Our Mission</h2>     
+        <p class="section-description">To empower communities through the provision of sustainable innovative technologies,</p>
+        <p class="section-description">To access to health care and education for improved food security, alleviate poverty, and social injustice.</p>
+
+        <!-- Embedded YouTube Video -->
+        <div class="video-container">
+            <video width="100%" controls>
+                <source src="path-to-your-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+{% comment %} 
+        <a href="#community-charter" class="btn-primary">Join Our Mission</a> {% endcomment %}
+    </div>
+</section>
+
+
+<!-- Vision Section -->
+<section class="vision-section py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Video on the left -->
+            <div class="col-md-6 text-center">
+                <video width="100%" controls>
+                    <source src="path-to-your-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <!-- Text content on the right -->
+            <div class="col-md-6">
+                <h2 class="section-title">Our Vision</h2>
+                <p class="section-description">To be the leading NGO in the provision of innovative sustainable technologies.</p>
+                <p class="quote fst-italic">Promote ICT and access to health care and education to enhance rural development.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Core Values Section -->
+<section class="values-section py-5">
+    <div class="container text-center">
+        <h2 class="section-title">Our Core Values</h2>
+        <div class="values-container">
+            <div class="value-card">
+                <h4>Innovation</h4>
+                <p>Pushing the boundaries of technology to create meaningful impact.</p>
+            </div>
+            <div class="value-card">
+                <h4>Excellence</h4>
+                <p>Striving for the highest quality in every project and service.</p>
+            </div>
+            <div class="value-card">
+                <h4>Inclusivity</h4>
+                <p>Ensuring technology benefits everyone, regardless of background.</p>
+            </div>
+            <div class="value-card">
+                <h4>Adaptability</h4>
+                <p>Embracing change and evolving with technology.</p>
+            </div>
+            <div class="value-card">
+                <h4>Integrity</h4>
+                <p>Upholding transparency, trust, and ethical practices.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Community Charter Section -->
+<section id="community-charter" class="community-charter py-5">
+    <div class="container">
+        <h2 class="section-title"> LEAD ORGANIZATION </h2>
+        <p class="section-description">Our commitment to fostering a thriving and inclusive tech community.</p>
+        <div class="charter-content">
+            <h3>1. Inclusivity &amp Diversity</h3>
+            <p>We welcome individuals from all backgrounds, ensuring equal opportunities in learning and innovation.</p>
+            <h3>4. Collaboration Over Competition</h3>
+            <p>We encourage open-source contributions, knowledge sharing, and mentorship to drive collective progress.</p>
+            <h3>5. Sustainability &amp Social Impact</h3>
+            <p>LEAD ORGANIZATION is dedicated to creating solutions that contribute positively to environmental sustainability and societal well-being.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta text-center">
+    <h2>Join Our Community of Digital Innovators</h2>
+    <a href="{% url 'courses' %}" class="btn btn-primary">Enroll Now</a>
+    <a href="{% url 'contact' %}" class="btn btn-outline-dark">Reach Us</a>
+</section>
+
+<style>
+    .testimonial-content {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .testimonial-content img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+
+    .carousel {
+        position: relative;
+    }
+
+    .carousel-inner {
+        text-align: center;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var myCarousel = new bootstrap.Carousel(document.getElementById('testimonialCarousel'), {
+            interval: 3000, // Change slides every 3 seconds
+            pause: false
+        });
+    });
+</script>
+
+{% endblock %}

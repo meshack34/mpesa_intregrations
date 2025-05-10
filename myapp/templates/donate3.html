@@ -1,0 +1,248 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home - LEAD{% endblock %}
+
+{% block content %}
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEAD - Empowering Communities for Sustainable Development</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/utilities/bsb-overlay/bsb-overlay.css">
+    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/services/service-8/assets/css/service-8.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="{% static 'css/newteam.css' %}">
+    <link rel="icon" href="{% static 'images/leadlogo.jpeg' %}" type="image/png">
+
+</head>
+<body>
+
+<!-- Header and Navigation -->
+{% include 'header.html' %}
+
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+               <div class="container">
+                              <div class="donation-box">
+                                  <!-- Header -->
+                                  <h2>We need your support to expand financial access. Give today.</h2>
+                                  <p>Your donations enable us to cover the costs of expanding access to life-changing and reaching more people across the globe.</p>
+                          
+                                  <!-- Toggle Donation Type -->
+                                  <div class="toggle-container">
+                                      <button id="one-time-btn" class="toggle-btn active">Give once</button>
+                                      <button id="monthly-btn" class="toggle-btn">Give monthly</button>
+                                  </div>
+                          
+                                  <!-- Donation Amounts -->
+                                  <div class="amount-container">
+                                      <button class="amount-btn" data-amount="10">$10</button>
+                                      <button class="amount-btn selected" data-amount="20">$20</button>
+                                      <button class="amount-btn" data-amount="35">$35</button>
+                                      <button class="amount-btn" data-amount="50">$50</button>
+                                      <button class="amount-btn" data-amount="75">$75</button>
+                                      <button class="amount-btn" data-amount="125">$125</button>
+                                  </div>
+                          
+                                  <!-- Custom Amount -->
+                                  <input type="number" id="custom-amount" class="custom-input" placeholder="Other amount">
+                          
+                                  <!-- Donation Button -->
+                                  <form method="POST">
+                                      {% csrf_token %}
+                                      <input type="hidden" id="donation-type" name="donation_type" value="once">
+                                      <input type="hidden" id="amount" name="amount" value="50">
+                                      <button type="submit" class="donate-btn">Donate once</button>
+                                  </form>
+                               
+                                  <!-- Donation Button -->
+<!-- Bank Details Section -->
+<div class="bank-details">
+    <h3>LEAD ORGANIZATION BANK DETAILS</h3>
+    <p><strong>BANK:</strong> COOPERATIVE BANK OF KENYA</p>
+    <p><strong>BRANCH:</strong> LITEIN</p>
+    <p><strong>ACCOUNT NAME:</strong> LEAD IN EMPOWERNMENT FOR ACCELERATED DEVELOPMENT</p>
+    <p><strong>ACCOUNT NUMBER:</strong> 01100260548001</p>
+</div>
+</div>
+</div>
+</div>
+            
+
+       
+    </section>
+
+<style>
+               .container {
+                   display: flex;
+                   justify-content: center;
+                   align-items: center;
+                  
+               }
+               .donation-box {
+                   background: white;
+                   padding: 30px;
+                   border-radius: 10px;
+                   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                   text-align: center;
+                   width: 100%;
+                   max-width: 400px;
+               }
+           
+               .donation-box h2 {
+                   font-size: 18px;
+                   color: #004d00;
+                   font-weight: bold;
+               }
+           
+               .donation-box p {
+                   font-size: 14px;
+                   color: #555;
+                   margin-bottom: 15px;
+               }
+               .toggle-container {
+                   display: flex;
+                   border-radius: 25px;
+                   padding: 5px;
+               }
+           
+               .toggle-btn {
+                   flex: 1;
+                   padding: 10px;
+                   border: none;
+                   border-radius: 20px;
+                   background: transparent;
+                   cursor: pointer;
+                   font-weight: bold;
+               }
+           
+               .toggle-btn.active {
+                   background: #004d00;
+                   color: white;
+               }
+               .amount-container {
+                   display: grid;
+                   grid-template-columns: repeat(2, 1fr);
+                   gap: 10px;
+                   margin-top: 15px;
+               }
+           
+               .amount-btn {
+                   padding: 12px;
+                   border: 2px solid #ccc;
+                   border-radius: 8px;
+                   background: white;
+                   font-size: 16px;
+                   cursor: pointer;
+               }
+           
+               .amount-btn.selected {
+                   border-color: #004d00;
+                   background: #e6f2e6;
+                   font-weight: bold;
+               }
+               .custom-input {
+                   width: 100%;
+                   padding: 10px;
+                   margin-top: 10px;
+                   border: 2px solid #ccc;
+                   border-radius: 8px;
+                   text-align: center;
+                   font-size: 16px;
+               }
+           
+               .donate-btn {
+                   width: 100%;
+                   margin-top: 20px;
+                   padding: 12px;
+                   border: none;
+                   background: #f4b400;
+                   color: white;
+                   font-size: 16px;
+                   font-weight: bold;
+                   border-radius: 8px;
+                   cursor: pointer;
+                   transition: background 0.3s;
+               }
+           
+               .donate-btn:hover {
+                   background: #e0a300;
+               }
+               .bank-details {
+                margin-top: 20px;
+                padding: 15px;
+                border-radius: 8px;
+                background: #f8f9fa;
+                text-align: center;
+                font-size: 16px;
+                color: #333;
+            }
+
+            .bank-details h3 {
+                color: #004d00;
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+        
+
+</style>
+
+
+
+<script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    var myCarousel = new bootstrap.Carousel(document.getElementById('testimonialCarousel'), {
+                        interval: 3000, // Change slides every 3 seconds
+                        pause: false
+                    });
+                });
+               // Toggle donation type
+               document.getElementById("one-time-btn").addEventListener("click", function () {
+                   this.classList.add("active");
+                   document.getElementById("monthly-btn").classList.remove("active");
+                   document.getElementById("donation-type").value = "once";
+               });
+           
+               document.getElementById("monthly-btn").addEventListener("click", function () {
+                   this.classList.add("active");
+                   document.getElementById("one-time-btn").classList.remove("active");
+                   document.getElementById("donation-type").value = "monthly";
+               });
+           
+               // Select donation amount
+               document.querySelectorAll(".amount-btn").forEach(button => {
+                   button.addEventListener("click", function () {
+                       document.querySelectorAll(".amount-btn").forEach(btn => btn.classList.remove("selected"));
+                       this.classList.add("selected");
+                       document.getElementById("amount").value = this.dataset.amount;
+                   });
+               });
+           
+               // Custom amount input
+               document.getElementById("custom-amount").addEventListener("input", function () {
+                   document.querySelectorAll(".amount-btn").forEach(btn => btn.classList.remove("selected"));
+                   document.getElementById("amount").value = this.value;
+               });
+           </script>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="{% static 'js/home.js' %}"></script>
+{% endblock %}
