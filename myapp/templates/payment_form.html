@@ -1,21 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home - LEAD{% endblock %}
+
+{% block content %}
+
+
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Make Payment</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEAD - Empowering Communities for Sustainable Development</title>
 
     <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
-    />
-  </head>
-  <body
-    class="d-flex align-items-center justify-content-center vh-100 bg-light"
-  >
-    {% comment %} {% load bootstrap5 %} {% endcomment %}
-     {% load django_bootstrap5 %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/utilities/bsb-overlay/bsb-overlay.css">
+    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/services/service-8/assets/css/service-8.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="{% static 'css/newteam.css' %}">
+    <link rel="icon" href="{% static 'images/leadlogo.jpeg' %}" type="image/png">
+
+</head>
+<body>
+
+<!-- Header and Navigation -->
+{% include 'header.html' %}
+
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+               <div class="container">
+
+
+                   {% load django_bootstrap5 %}
 
 
     <div class="card shadow-sm p-4" style="width: 100%; max-width: 500px">
@@ -55,10 +76,132 @@
           <span id="buttonText">Pay</span>
         </button>
       </form>
-    </div>
+    </div>            
+                             
+</div>
+</div>
+            
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+       
+    </section>
+
+<style>
+               .container {
+                   display: flex;
+                   justify-content: center;
+                   align-items: center;
+                  
+               }
+               .donation-box {
+                   background: white;
+                   padding: 30px;
+                   border-radius: 10px;
+                   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                   text-align: center;
+                   width: 100%;
+                   max-width: 400px;
+               }
+           
+               .donation-box h2 {
+                   font-size: 18px;
+                   color: #004d00;
+                   font-weight: bold;
+               }
+           
+               .donation-box p {
+                   font-size: 14px;
+                   color: #555;
+                   margin-bottom: 15px;
+               }
+               .toggle-container {
+                   display: flex;
+                   border-radius: 25px;
+                   padding: 5px;
+               }
+           
+               .toggle-btn {
+                   flex: 1;
+                   padding: 10px;
+                   border: none;
+                   border-radius: 20px;
+                   background: transparent;
+                   cursor: pointer;
+                   font-weight: bold;
+               }
+           
+               .toggle-btn.active {
+                   background: #004d00;
+                   color: white;
+               }
+               .amount-container {
+                   display: grid;
+                   grid-template-columns: repeat(2, 1fr);
+                   gap: 10px;
+                   margin-top: 15px;
+               }
+           
+               .amount-btn {
+                   padding: 12px;
+                   border: 2px solid #ccc;
+                   border-radius: 8px;
+                   background: white;
+                   font-size: 16px;
+                   cursor: pointer;
+               }
+           
+               .amount-btn.selected {
+                   border-color: #004d00;
+                   background: #e6f2e6;
+                   font-weight: bold;
+               }
+               .custom-input {
+                   width: 100%;
+                   padding: 10px;
+                   margin-top: 10px;
+                   border: 2px solid #ccc;
+                   border-radius: 8px;
+                   text-align: center;
+                   font-size: 16px;
+               }
+           
+               .donate-btn {
+                   width: 100%;
+                   margin-top: 20px;
+                   padding: 12px;
+                   border: none;
+                   background: #f4b400;
+                   color: white;
+                   font-size: 16px;
+                   font-weight: bold;
+                   border-radius: 8px;
+                   cursor: pointer;
+                   transition: background 0.3s;
+               }
+           
+               .donate-btn:hover {
+                   background: #e0a300;
+               }
+               .bank-details {
+                margin-top: 20px;
+                padding: 15px;
+                border-radius: 8px;
+                background: #f8f9fa;
+                text-align: center;
+                font-size: 16px;
+                color: #333;
+            }
+
+            .bank-details h3 {
+                color: #004d00;
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+        
+
+</style>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
       function handleFormSubmit(event) {
         event.preventDefault();
@@ -75,5 +218,49 @@
         event.target.submit();
       }
     </script>
-  </body>
-</html>
+
+<script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    var myCarousel = new bootstrap.Carousel(document.getElementById('testimonialCarousel'), {
+                        interval: 3000, // Change slides every 3 seconds
+                        pause: false
+                    });
+                });
+               // Toggle donation type
+               document.getElementById("one-time-btn").addEventListener("click", function () {
+                   this.classList.add("active");
+                   document.getElementById("monthly-btn").classList.remove("active");
+                   document.getElementById("donation-type").value = "once";
+               });
+           
+               document.getElementById("monthly-btn").addEventListener("click", function () {
+                   this.classList.add("active");
+                   document.getElementById("one-time-btn").classList.remove("active");
+                   document.getElementById("donation-type").value = "monthly";
+               });
+           
+               // Select donation amount
+               document.querySelectorAll(".amount-btn").forEach(button => {
+                   button.addEventListener("click", function () {
+                       document.querySelectorAll(".amount-btn").forEach(btn => btn.classList.remove("selected"));
+                       this.classList.add("selected");
+                       document.getElementById("amount").value = this.dataset.amount;
+                   });
+               });
+           
+               // Custom amount input
+               document.getElementById("custom-amount").addEventListener("input", function () {
+                   document.querySelectorAll(".amount-btn").forEach(btn => btn.classList.remove("selected"));
+                   document.getElementById("amount").value = this.value;
+               });
+           </script>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="{% static 'js/home.js' %}"></script>
+{% endblock %}
